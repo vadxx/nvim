@@ -10,6 +10,21 @@ end
 -- Change leader to a comma
 -- vim.g.mapleader = ','
 
+-- Easy run vim promt
+map('n', ';', ':') 
+
+-- Move text in Visual mode
+map('v', '<', '<gv') 
+map('v', '>', '>gv') 
+
+-- Easy hor and ver windows
+map('n', ';h', ':vsplit<CR>') 
+map('n', ';v', ':split<CR>') 
+
+map('n', ';t', ':tabnew<CR>') 
+map('n', '<S-Tab>', ':tabprev<CR>') 
+map('n', '<Tab>', ':tabnext<CR>') 
+
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
 

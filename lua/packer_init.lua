@@ -58,7 +58,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
 	-- Tag viewer
-  use 'preservim/tagbar'
+  -- use 'preservim/tagbar'
 
 	-- LSP
 	use {
@@ -85,6 +85,15 @@ return packer.startup(function(use)
       require('gitsigns').setup()
     end
   }
+	
+	-- Keymaps suggestions
+	use 'folke/which-key.nvim'
+
+	-- Telescope
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {'nvim-lua/plenary.nvim'}, 
+	}
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

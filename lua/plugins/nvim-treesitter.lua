@@ -7,13 +7,13 @@ end
 nvim_treesitter.setup {
   -- A list of parser names, or "all"
   ensure_installed = {
-    'bash', 'c', 'cpp', 'css', 'html', 'javascript', 'json', 'lua', 'python',
-    'typescript', 'vim'
+    'bash', 'lua', 'c', 'cpp', 'python', 'json', 'csv'
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
-  highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
-  },
+
+	highlight = { enable = true },
+	indent = { enable = true },
+	autotag = { enable = true },
+	autopairs = { enable = true },
 }

@@ -46,9 +46,13 @@ return packer.startup(function(use)
 	use 'navarasu/onedark.nvim'
 
 	-- Status and Tab lines
-	use {'beauwilliams/statusline.lua',
-		requires = { 'kyazdani42/nvim-web-devicons' },	
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	}
+	--use {'beauwilliams/statusline.lua',
+		--requires = { 'kyazdani42/nvim-web-devicons' },	
+	--}
 
 	-- File explorer
   use 'kyazdani42/nvim-tree.lua'

@@ -1,7 +1,7 @@
 # nvim
 Modern and aesthetic configuration of Neovim.
 
-### Get latest NeoVim
+### get latest Neovim
 ```bash
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod u+x nvim.appimage
@@ -10,14 +10,14 @@ ln ~/.local/bin/nvim.appimage ~/.local/bin/nvim
 # add it to your fish config: set PATH $HOME/.local/bin $PATH
 ```
 
-### Get this configuration
+### get this configuration
 ```bash
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-git clone https://github.com/vad56/my-nvim.git ~/.config/nvim
+git clone https://github.com/vadxx/nvim.git ~/.config/nvim
 nvim +PackerSync! +qall!
 ```
 
-### References
+### references
 * Based on [brainfucksec/neovim-lua](https://github.com/brainfucksec/neovim-lua)

@@ -8,6 +8,12 @@ end
 return packer.startup(function(use)
 	-- Add you plugins here:
 	use 'wbthomason/packer.nvim' -- packer can manage itself
+	use {
+		'lewis6991/impatient.nvim', -- improve load plugins speed
+		config = function()
+			require('impatient').enable_profile()
+		end
+	}
 
 	-- Indent line
 	use 'lukas-reineke/indent-blankline.nvim'

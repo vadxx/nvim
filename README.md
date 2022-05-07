@@ -12,15 +12,17 @@ ln ~/.local/bin/nvim.appimage ~/.local/bin/nvim
 
 ### get this configuration
 ```bash
-# remove old cache and config
+# remove old cache
 rm -rf ~/.local/share/nvim ~/.cache/nvim \
-	~/.config/nvim/plugin/packer_compiled.lua ~/.config/nvim
+	~/.config/nvim/plugin/packer_compiled.lua 
+# remove old config
+rm -rf .enable_profile()
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 git clone https://github.com/vadxx/nvim.git ~/.config/nvim
-nvim +PackerSync! +qall!
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
 ### references

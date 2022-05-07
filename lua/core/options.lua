@@ -24,6 +24,9 @@ o.linebreak = true	-- Wrap on word boundary
 o.shiftwidth = 2 
 o.tabstop = 2 
 
+-- Language specific
+g.python_recommended_style = 0
+
 -- Performance
 o.hidden = true			-- Enable background buffers
 o.history = 100			-- Remember N lines in history

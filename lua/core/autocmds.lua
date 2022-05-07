@@ -10,6 +10,11 @@ autocmd('TextYankPost', {
 	end
 })
 
+autocmd('TextYankPost', {
+	pattern = '*',
+	command = "if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg +' | endif"
+})
+
 -- Don't auto commenting new lines
 autocmd('BufEnter', {
   pattern = '*',

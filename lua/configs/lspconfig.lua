@@ -1,16 +1,16 @@
 -- For configuration see the Wiki: https://github.com/neovim/nvim-lspconfig/wiki
 -- Autocompletion settings of "nvim-cmp" are defined in plugins/nvim-cmp.lua
 
-local lspconf_status, lspconfig = pcall(require, 'lspconfig')
-local saga_status, saga = pcall(require, 'saga')
-local lsp_installer_status, lsp_installer = pcall(require, 'nvim-lsp-installer')
-local cmp_status_ok, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+local installer_st, installer = pcall(require, 'nvim-lsp-installer')
 
-if not (lspconf_status and saga_status and lsp_installer_status and cmp_status_ok) then
+if not installer_st then
 	return
 end
 
+installer.on_server_ready(function(server)
+	local opts = {}
+	server:setup(opts)
+end)
 
-lsp_installer.setup({
-	automatic_installation = true
-})
+
+

@@ -70,7 +70,6 @@ return packer.startup(function(use)
 		'williamboman/nvim-lsp-installer',
 		'onsails/lspkind.nvim',
 		'neovim/nvim-lspconfig',
-		'glepnir/lspsaga.nvim',
 	}
 
 	-- Treesitter

@@ -1,15 +1,15 @@
 -- Autocommand that reloads neovim whenever you save the packer_init.lua file
 vim.cmd [[
 	augroup packer_user_config
-		autocmd!
-		autocmd BufWritePost plugins.lua source <afile> | PackerSync
+	autocmd!
+	autocmd BufWritePost plugins.lua source <afile> | PackerSync
 	augroup end
 ]]
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
-  return
+	return
 end
 
 -- Install plugins
@@ -31,19 +31,23 @@ return packer.startup(function(use)
 
 	-- Comment
 	use {
-		'numToStr/Comment.nvim', 
-		config = function()
-      require('Comment').setup()
-    end
- 	}
+	'numToStr/Comment.nvim', 
+	config = function()
+			require('Comment').setup()
+		end
+	}
+
+
+	-- Code format
+	use 'sbdchd/neoformat'
 
 	-- Autopair
-  use {
-    'windwp/nvim-autopairs',
-    config = function()
-      require('nvim-autopairs').setup()
-    end
- 	}
+	use {
+		'windwp/nvim-autopairs',
+		config = function()
+			require('nvim-autopairs').setup()
+		end
+	}
 
 	-- Color schemes
 	-- use 'navarasu/onedark.nvim'
@@ -56,16 +60,16 @@ return packer.startup(function(use)
 	}
 
 	-- File explorer
-  use 'kyazdani42/nvim-tree.lua'
+	use 'kyazdani42/nvim-tree.lua'
 
 	-- Tag viewer
-  -- use 'preservim/tagbar'
+	-- use 'preservim/tagbar'
 
 	-- LSP
 	use {
-  	'williamboman/nvim-lsp-installer',
+		'williamboman/nvim-lsp-installer',
 		'onsails/lspkind.nvim',
-  	'neovim/nvim-lspconfig',
+		'neovim/nvim-lspconfig',
 		'glepnir/lspsaga.nvim',
 	}
 
@@ -82,17 +86,17 @@ return packer.startup(function(use)
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-buffer',
 			'saadparwaiz1/cmp_luasnip',
-		},
-  }
+	},
+	}
 
 	-- Git labels
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('gitsigns').setup()
-    end
-  }
+	use {
+		'lewis6991/gitsigns.nvim',
+		requires = { 'nvim-lua/plenary.nvim' },
+		config = function()
+			require('gitsigns').setup()
+		end
+	}
 
 	-- Keymaps suggestions
 	use 'folke/which-key.nvim'
@@ -105,11 +109,20 @@ return packer.startup(function(use)
 	
 	-- Better escape (jk, jj)
 	use {
-		"max397574/better-escape.nvim",
+		'max397574/better-escape.nvim',
 		config = function()
 			require("better_escape").setup()
 		end,
 	}
+	
+	-- Color highlight
+	use { 
+		'NvChad/nvim-colorizer.lua',
+		config = function()
+			require("colorizer").setup()
+		end,
+	}
+
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
@@ -117,3 +130,4 @@ return packer.startup(function(use)
 		require('packer').sync()
 	end
 end)
+

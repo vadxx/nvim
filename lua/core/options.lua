@@ -15,6 +15,9 @@ o.laststatus = 3
 o.linebreak = true
 o.termguicolors = true
 
+o.list = true
+o.listchars:append("space:⋅")
+
 -- Search
 o.ignorecase = true	-- Ignore case letters when search
 o.smartcase = true	-- Ignore lowercase for the whole pattern

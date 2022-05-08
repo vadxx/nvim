@@ -1,7 +1,7 @@
 local function map(mode, lhs, rhs, opts)
 	local options = { noremap = true, silent = true }
 	if opts then
-  	options = vim.tbl_extend('force', options, opts)
+		options = vim.tbl_extend('force', options, opts)
 	end
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
@@ -27,8 +27,8 @@ map('n', '<Tab>', ':tabnext<CR>')
 
 -- Apps and Plugins
 -- NvimTree
-map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
+map('n', '<C-n>', ':NvimTreeToggle<CR>')						-- open/close
 
 -- Tagbar
--- map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
+-- map('n', '<leader>z', ':TagbarToggle<CR>')					-- open/close
 

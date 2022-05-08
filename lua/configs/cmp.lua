@@ -1,13 +1,12 @@
 local cmp_status_ok, cmp = pcall(require, 'cmp')
-if not cmp_status_ok then
-  return
-end
-
+local cmp_icons_status_ok, lspkind = pcall(require, 'lspkind')
 local luasnip_status_ok, luasnip = pcall(require, 'luasnip')
-if not luasnip_status_ok then
+
+if not (cmp_status_ok and cmp_icons_status_ok and luasnip_status_ok) then
   return
 end
 
+lspkind.init()
 cmp.setup {
   -- Load snippet support
   snippet = {
@@ -64,4 +63,11 @@ cmp.setup {
     { name = 'path' },
     { name = 'buffer' },
   },
+
+	formatting = {
+    format = function(entry, vim_item)
+      vim_item.kind = lspkind.presets.default[vim_item.kind]
+      return vim_item
+    end
+  }
 }

@@ -13,7 +13,7 @@ wk.register({
 	},
 	t = {
 		name = "Theme",
-		b = {":let &background = ( &background == \"dark\"? \"light\" : \"dark\" )<cr>", "Toggle light/dark"},
+		b = { ":let &background = ( &background == \"dark\"? \"light\" : \"dark\" )<cr>", "Toggle light/dark background" },
 	},
 	-- Core
 	q = { ":qa!<cr>", "Close all windows and exit"},
@@ -21,17 +21,22 @@ wk.register({
 	c = { ":nohl<cr>", "Clear search highlighting" },
 	r = { ":so %<cr>", "Reload configuration without restart" },
 	-- LSP
-	--g = {
-	--	name = "LSP",
-	--	r = { "<cmd>Telescope lsp_references<cr>", "References" },
-	--	w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-	-- }
-	-- TODO
+	K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Hover (LSP)" },
+	C = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action (LSP)"},
+	R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename (LSP)"},
+	E = { "<cmd>Telescope diagnostics<cr>", "Diagnostics (LSP)" },
+	g = {
+		name = "Goto (LSP)",
+		h = { "<cmd>lua vim.lsp.buf.references()<cr>", "References" },
+		d = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Peek Definition" },
+		i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Goto Implementation" } ,
+		s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" } ,
+	},
 }, { prefix = "<leader>" })
 
 wk.register({
 	name = "Convert spaces to tabs",
-	["2"] = {":%s#\\s\\s#\\t#g<cr>:noh<cr>", "Conv 2 spaces to tab in file"},
-	["4"] = {":%s#\\s\\s\\s\\s#\\t#g<cr>:noh<cr>", "Conv 4 spaces to tab in file"},
+	["2"] = { ":%s#\\s\\s#\\t#g<cr>:noh<cr>", "Conv 2 spaces to tab in file"},
+	["4"] = { ":%s#\\s\\s\\s\\s#\\t#g<cr>:noh<cr>", "Conv 4 spaces to tab in file"},
 }, { prefix = "<leader>=" })
 

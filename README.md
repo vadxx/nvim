@@ -27,3 +27,5 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 ### references
 * Based on [brainfucksec/neovim-lua](https://github.com/brainfucksec/neovim-lua)
+* Some settings/plugins was taken from [NvChad/NvChad](https://github.com/NvChad/NvChad
+* Some ideas was taken from [my old config for Vim](https://github.com/vadxx/vim)

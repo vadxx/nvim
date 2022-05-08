@@ -29,6 +29,14 @@ return packer.startup(function(use)
 	-- Indent line
 	use 'lukas-reineke/indent-blankline.nvim'
 
+	-- Comment
+	use {
+		'terrortylor/nvim-comment', 
+		config = function()
+      require('nvim_comment').setup()
+    end
+ 	}
+
 	-- Autopair
   use {
     'windwp/nvim-autopairs',
@@ -55,8 +63,9 @@ return packer.startup(function(use)
 
 	-- LSP
 	use {
-  	"williamboman/nvim-lsp-installer",
-  	"neovim/nvim-lspconfig",
+  	'williamboman/nvim-lsp-installer',
+  	'neovim/nvim-lspconfig',
+		'glepnir/lspsaga.nvim',
 	}
 
 	-- Treesitter

@@ -31,15 +31,11 @@ return packer.startup(function(use)
 
 	-- Comment
 	use {
-	'numToStr/Comment.nvim', 
+	'numToStr/Comment.nvim',
 	config = function()
 			require('Comment').setup()
 		end
 	}
-
-
-	-- Code format
-	use 'sbdchd/neoformat'
 
 	-- Autopair
 	use {
@@ -62,8 +58,11 @@ return packer.startup(function(use)
 	-- File explorer
 	use 'kyazdani42/nvim-tree.lua'
 
-	-- Tag viewer
-	-- use 'preservim/tagbar'
+	-- Tag viewer (requires ctags)
+	use 'preservim/tagbar'
+
+	-- Move text in visual mode (any how: hor/vert)
+	use 'matze/vim-move'
 
 	-- LSP
 	use {
@@ -86,7 +85,7 @@ return packer.startup(function(use)
 			'L3MON4D3/LuaSnip',
 			'saadparwaiz1/cmp_luasnip',
 			'rafamadriz/friendly-snippets',
-	},
+		},
 	}
 
 	-- Git labels
@@ -106,7 +105,7 @@ return packer.startup(function(use)
 		'nvim-telescope/telescope.nvim',
 		requires = {'nvim-lua/plenary.nvim'},
 	}
-	
+
 	-- Better escape (jk, jj)
 	use {
 		'max397574/better-escape.nvim',
@@ -114,9 +113,9 @@ return packer.startup(function(use)
 			require("better_escape").setup()
 		end,
 	}
-	
+
 	-- Color highlight
-	use { 
+	use {
 		'NvChad/nvim-colorizer.lua',
 		config = function()
 			require("colorizer").setup()

@@ -32,6 +32,7 @@ wk.register({
 		i = { "<cmd>lua vim.lsp.buf.implementation()<cr>", "Goto Implementation" } ,
 		s = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help" } ,
 	},
+	z = { ":TagbarToggle<cr>", "Toggle Tagbar"},
 }, { prefix = "<leader>" })
 
 wk.register({

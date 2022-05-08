@@ -7,6 +7,11 @@ o.clipboard = 'unnamedplus'
 o.swapfile = false
 o.completeopt = 'menuone,noinsert,noselect'
 
+
+-- use filetype.lua instead of filetype.vim
+g.did_load_filetypes = 0
+g.do_filetype_lua = 1
+
 -- UI
 o.number = true
 o.showmatch = true
@@ -14,6 +19,8 @@ o.showmode = false
 o.laststatus = 3
 o.linebreak = true
 o.termguicolors = true
+o.cul = true	-- Cursor line
+
 
 o.list = true
 o.listchars:append("space:⋅")
@@ -31,14 +38,14 @@ o.tabstop = 2
 g.python_recommended_style = 0
 
 -- Performance
-o.hidden = true			-- Enable background buffers
-o.history = 100			-- Remember N lines in history
+o.hidden = true		-- Enable background buffers
+o.history = 100		-- Remember N lines in history
 o.lazyredraw = true	-- Faster scrolling
-o.synmaxcol = 240		-- Max column for syntax highlight
+o.synmaxcol = 240 	-- Max column for syntax highlight
 o.updatetime = 700	-- ms to wait for trigger an event
 
 -- Startup
-o.shortmess:append "sI"
+o.shortmess:append "sI" -- Disable nvim intro
 
 -- Disable builtins plugins
 local disabled_built_ins = {

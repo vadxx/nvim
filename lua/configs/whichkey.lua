@@ -11,8 +11,13 @@ wk.register({
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File"},
 		w = { "<cmd>Telescope live_grep<cr>", "Search in current dir"},
 	},
+	t = {
+		name = "Theme",
+		b = {":let &background = ( &background == \"dark\"? \"light\" : \"dark\" )<cr>", "Toggle light/dark"},
+	},
 	-- Core
 	q = { ":qa!<cr>", "Close all windows and exit"},
+	w = { ":w<cr>", "Save changes in current file"},
 	c = { ":nohl<cr>", "Clear search highlighting" },
 	r = { ":so %<cr>", "Reload configuration without restart" },
 	-- LSP

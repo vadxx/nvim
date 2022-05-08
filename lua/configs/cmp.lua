@@ -1,12 +1,14 @@
-local cmp_status_ok, cmp = pcall(require, 'cmp')
-local cmp_icons_status_ok, lspkind = pcall(require, 'lspkind')
-local luasnip_status_ok, luasnip = pcall(require, 'luasnip')
+local cmp_st, cmp = pcall(require, 'cmp')
+local cmp_icons_st, lspkind = pcall(require, 'lspkind')
+local luasnip_st, luasnip = pcall(require, 'luasnip')
 
-if not (cmp_status_ok and cmp_icons_status_ok and luasnip_status_ok) then
+if not (cmp_st and cmp_icons_st and luasnip_st) then
 	return
 end
 
-lspkind.init()
+require("luasnip.loaders.from_vscode").lazy_load()
+
+
 cmp.setup {
 	-- Load snippet support
 	snippet = {
@@ -17,7 +19,6 @@ cmp.setup {
 
 -- Completion settings
 	completion = {
-		--completeopt = 'menu,menuone,noselect'
 		keyword_length = 3
 	},
 
@@ -35,7 +36,7 @@ cmp.setup {
 		},
 
 		-- Tab mapping
-		['<Tab>'] = function(fallback)
+		['<Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -43,8 +44,8 @@ cmp.setup {
 			else
 				fallback()
 			end
-		end,
-		['<S-Tab>'] = function(fallback)
+		end, {"i", "s"}),
+		['<S-Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -52,22 +53,22 @@ cmp.setup {
 			else
 				fallback()
 			end
-		end
+		end, {"i", "s"}),
 	},
 
 	-- Load sources, see: https://github.com/topics/nvim-cmp
 	sources = {
-		{ name = 'nvim_lsp' },
 		{ name = 'nvim_lsp_signature_help' },
+		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
 		{ name = 'path' },
 		{ name = 'buffer' },
 	},
 
 	formatting = {
-		format = function(entry, vim_item)
-			vim_item.kind = lspkind.presets.default[vim_item.kind]
-			return vim_item
-		end
+		format = lspkind.cmp_format({
+			mode = 'symbol_text',
+			maxwidth = 30,
+		})
 	}
 }

@@ -18,8 +18,8 @@ map('', '<', '<gv')
 map('', '>', '>gv') 
 
 -- Easy hor and ver windows
-map('n', ';h', ':vsplit<cr>') 
-map('n', ';v', ':split<cr>') 
+map('n', ';h', ':split<cr>') 
+map('n', ';v', ':vsplit<cr>') 
 
 map('n', ';t', ':tabnew<cr>') 
 map('n', '<S-Tab>', ':tabprev<cr>') 
@@ -28,7 +28,4 @@ map('n', '<Tab>', ':tabnext<cr>')
 -- Apps and Plugins
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<cr>')						-- open/close
-
--- Tagbar
--- map('n', '<leader>z', ':TagbarToggle<cr>')					-- open/close
 

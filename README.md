@@ -40,10 +40,9 @@ git clone https://github.com/wbthomason/packer.nvim\
 git clone https://github.com/vadxx/nvim "$env:LOCALAPPDATA\nvim" --depth 1
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
-Note: Check [my other configurations](https://github.com/vadxx/config).
-
 
 ### references
-* Based on [brainfucksec/neovim-lua](https://github.com/brainfucksec/neovim-lua)
-* Some settings/plugins was taken from [NvChad/NvChad](https://github.com/NvChad/NvChad
+* Check [my other configurations](https://github.com/vadxx/config).
+* This config is based on [brainfucksec/neovim-lua](https://github.com/brainfucksec/neovim-lua)
+* Some settings/plugins was taken from [NvChad/NvChad](https://github.com/NvChad/NvChad)
 * Some ideas was taken from [my old config for Vim](https://github.com/vadxx/vim)

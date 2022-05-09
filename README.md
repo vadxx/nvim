@@ -27,13 +27,15 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 For `Windows`:
 ```powershell
+# install Choco before: https://chocolatey.org/install
 choco install mingw neovim
 
 # remove old cache and config
 rmdir -Recurse -Force $env:LOCALAPPDATA\nvim 
 rmdir -Recurse -Force $env:LOCALAPPDATA\nvim-data
 
-git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+git clone https://github.com/wbthomason/packer.nvim\
+ "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 
 git clone https://github.com/vadxx/nvim "$env:LOCALAPPDATA\nvim" --depth 1
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

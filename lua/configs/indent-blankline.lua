@@ -18,9 +18,9 @@ indent_blankline.setup {
 		'lspinfo',
 		'packer',
 		'NvimTree',
-  },
-  buftype_exclude = {
+	},
+	buftype_exclude = {
 		'terminal',
 		'nofile',
-  },
+	},
 }

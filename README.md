@@ -40,7 +40,7 @@ git clone https://github.com/wbthomason/packer.nvim\
 git clone https://github.com/vadxx/nvim "$env:LOCALAPPDATA\nvim" --depth 1
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
-
+Note: Check [my other configurations](https://github.com/vadxx/config).
 
 
 ### references

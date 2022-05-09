@@ -29,6 +29,10 @@ return packer.startup(function(use)
 	-- Indent line
 	use 'lukas-reineke/indent-blankline.nvim'
 
+
+	-- Highlight current word
+	use 'RRethy/vim-illuminate'
+
 	-- Comment
 	use {
 	'numToStr/Comment.nvim',

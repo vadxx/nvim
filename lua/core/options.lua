@@ -21,6 +21,9 @@ o.linebreak = true
 o.termguicolors = true
 o.cul = true	-- Cursor line
 
+vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
+vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
+vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
 
 o.list = true
 o.listchars:append("space:⋅")
